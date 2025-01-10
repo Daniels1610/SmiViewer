@@ -1,0 +1,25 @@
+h1 {
+    font-family: 'Kantumruy Pro';
+    font-style: bold;
+    font-weight: 900;
+}
+
+label {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+textarea {
+    resize: none
+}
+
+.flash {
+    color: #BC4B51;
+    font-size: medium;
+    font-weight: bold;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}SmileNote{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Google API Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro&family=Lexend&family=Noto+Sans" rel="stylesheet">
+
+        <!-- Static assets-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+        {% block header %}{% endblock %}        
+    </head>
+
+    <body>
+        {% block content %}
+        {% endblock %}
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+    </body>
+
+    <footer>
+        <div>
+            
+        </div>
+    </footer>
+</html>
