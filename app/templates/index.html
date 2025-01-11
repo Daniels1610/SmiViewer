@@ -6,11 +6,13 @@
 {% endblock %}
 
 {% block content %}
-    <form action="/chemical" method="post">
-        <label for="smile"> SMILES</label>
-        <textarea name="smile" id="smile" placeholder="Enter your long SMILES..." rows="10" cols="20"></textarea>
+    <form id="smiviewer_form" action="/chemical" method="post">
         <label for="monomer">Monomer Name</label>
-        <input type="text" name="monomer" id="monomer" maxlength="20" required>
-        <input type="submit" value="Query">
+        <input type="text" name="monomer" id="monomer_input" maxlength="20" required><br><br>
+
+        <label for="smiles"> SMILES</label>
+        <textarea name="smiles" id="smiles_input" placeholder="Enter your long SMILES..." rows="5" cols="30"></textarea>
+
+        <button type="submit">Submit</button>
     </form>
 {% endblock %}

@@ -21,11 +21,12 @@
         {% for message in get_flashed_messages() %}
             <div class="flash">{{ message }}</div>
         {% endfor %}
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
     </body>
 
     <footer>
         <div>
-            
+            <p>Made by 🚀 Daniel Agraz. 2025</p>
         </div>
     </footer>
 </html>
