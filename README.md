@@ -1,7 +1,7 @@
 # SmiViewer 🧪
 
 **SmiViewer** is a Flask Web Application that takes a chemical structure by their SMILES (Simplified Molecular Input Line Entry System)
-notation an extracts the molecule properties such as the molecular weight, functional group and a 2D representation of the compound. To learn more about SMILES and how are they formed visit this ![page](https://archive.epa.gov/med/med_archive_03/web/html/smiles.html)<br>  
+notation an extracts the molecule properties such as the molecular weight, functional group and a 2D representation of the compound.<br>  
 ![Smiviewer](app/static/smiviewer-demo.png?raw=true "Smiviewer Home Page")
 
 ### Getting Started
