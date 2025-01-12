@@ -37,7 +37,8 @@ To install the project dependencies.
 pip install -r requirements.txt
 ```
 <br>
-  
+
+Before getting to the final step, you will a `.env` file in the project's directory, so you are able to loadthe environment variables for the project such as the `SECRET_KEY` variable. Reach out to dagraz16@gmail.com so I can share that file with you.
     
 Finally, run the flask application:
 ```bash
