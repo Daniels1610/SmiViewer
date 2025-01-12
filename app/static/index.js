@@ -1,9 +1,11 @@
 const monomerInput = document.getElementById('monomer_input');
 const smilesInput = document.getElementById('smiles_input');
+const flashAlert = document.querySelector('.flash');
 
 // Prevent Copy-Pase on Monomer Name field
 window.onload = (e) => {
     monomerInput.onpaste = e => e.preventDefault();
+    removeFlash();
 }
 
 // Allows only alphanumeric values on monomer name field
@@ -18,5 +20,10 @@ monomerInput.addEventListener('beforeinput', (e) => {
         return;
 });
 
+const removeFlash = () => {
+    setTimeout(() => {
+        flashAlert.remove();
+    }, 3000)
+}
 
 

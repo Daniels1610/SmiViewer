@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
 {% block header %} 
-    <h1>{% block title %} SmiViewer {% endblock %}</h1>
+    <h1 class="mol-name">{{ mol['name'] }}</h1>
 {% endblock %}
 
 {% block content %}
-    <p>Your Monomer Name: <b>{{ mol['name'] }}</b></p>
-    <p>Molecule Weight: <b>{{ mol['weight'] }}</b></p>
-    <p>Functional Group: <b>{{ mol['group'] | capitalize }}</b></p>
-    <p>Monomer Image: </p>
-    <img src="{{ mol['diagram'] }}" alt="Monomer Image">
-    <button><a href="/chemical">Back</a></button>
+    <div class="results">
+        <img src="{{ mol['diagram'] }}" width="500" height="500" class="mol_image" alt="Monomer Image">
+        <p class="mt-5 mol-weight">Molecule Weight: <b>{{ mol['weight'] }} u</b></p>
+        <p class="mol-group">Functional Group: <b>{{ mol['group'] | capitalize }}</b></p>
+        <div class="back-btn">
+            <a class="button back-anchor" href="/chemical">Back</a>
+        </div>
+        
+    </div>
 {% endblock %}

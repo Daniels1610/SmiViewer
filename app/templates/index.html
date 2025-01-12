@@ -1,18 +1,50 @@
 {% extends 'base.html' %}
 
 {% block title %}{% endblock %}
-{% block header %} 
-    <h1>Welcome to SmiViewer</h1>
+{% block header %}
 {% endblock %}
 
 {% block content %}
-    <form id="smiviewer_form" action="/chemical" method="post">
-        <label for="monomer">Monomer Name</label>
-        <input type="text" name="monomer" id="monomer_input" maxlength="20" required><br><br>
+<h1 class="welcome-header">Welcome to SmiViewer 🧪</h1>
+<form id="smiviewer_form" action="/chemical" method="post">
+    <div class="form-floating">
+        <input 
+            type="text" 
+            name="monomer" 
+            id="monomer_input" 
+            class="form-control"
+            placeholder="Enter your Monomer Name"
+            maxlength="30" 
+            required
+        />
+        <label for="monomer_input">Monomer Name</label><br><br>
+    </div>
 
-        <label for="smiles"> SMILES</label>
-        <textarea name="smiles" id="smiles_input" placeholder="Enter your long SMILES..." rows="5" cols="30"></textarea>
+    <div class="form-floating">
+        <textarea
+            type="text" 
+            name="smiles" 
+            id="smiles_input"
+            class="form-control smiles-area"
+            value=""
+            style="height: 150px;"
+            placeholder="Enter your long SMILES..."
+            required></textarea>
+        <label for="smiles_input">Enter your long SMILES...</label>
+    </div>
 
-        <button type="submit">Submit</button>
-    </form>
+    {% for message in get_flashed_messages() %}
+        <div class="flash alert alert-warning">⚠️ {{ message }}</div>
+    {% endfor %}
+
+    <button class="button">
+        Submit
+    </button>
+</form>    
+{% endblock %}
+
+{% block footer %}
+<div>
+    <i><p>Made by Daniel Agraz Vallejo 🚀 - 2025</p></i>
+</div>
 {% endblock %}
