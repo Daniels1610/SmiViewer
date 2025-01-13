@@ -58,9 +58,12 @@ To get you started you can try any of the following SMILES:
 - C=CCN1C(=O)N(C(=O)N(C1=O)CC=C)CC=C
 - CC(S)CC(=O)OCCN1C(=O)N(CCOC(=O)CC(C)S)C(=O)N(CCOC(=O)CC(C)S)C1=O
 - C=CC(=O)OCCCOCCCOCCCOC(=O)C=C
-- C=CC(=O)OC(=O)NCCCCCn1c(==O)n(CCCCCNC(O)OCCOC(=O)C-C)c(=O)n(CCCCCCNC(=OOCCOC(=O)C=C)c1 (This is one is Invalid 👀)<br>
-
+- C=CC(=O)OC(=O)NCCCCCn1c(==O)n(CCCCCNC(O)OCCOC(=O)C-C)c(=O)n(CCCCCCNC(=OOCCOC(=O)C=C)c1 (This is one is Invalid 👀)<br><br>  
+  
 ![Smiviewer](app/static/smiviewer-formfilled.png?raw=true "Smiviewer with Form Filled")
 
-Then click on Submit to discover the fantastic structure and some properties of your Monomer!<br>
+Then click on Submit to discover the fantastic structure and some properties of your Monomer!<br><br>  
+  
 ![Smiviewer](app/static/smiviewer-results.png?raw=true "Smiviewer Results Display")
+
+**Note:** The branch `async-app` is a version of SmiViewer that loads the Monomer results in the same page, thus it's processing happens asynchronously.
