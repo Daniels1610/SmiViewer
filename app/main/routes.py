@@ -25,7 +25,7 @@ def index():
             mol.set_diagram('data:image/png;base64,' + b64encode(image_io.getvalue()).decode('ascii'))
             return render_template("results.html", mol=mol.to_dict()), 200
         else:
-            flash("Invalid input. Enter your SMILES again")
+            flash("Invalid input. Please check your Monomer Name or SMILES")
             status_code = 400
         
     return render_template("index.html"), status_code
