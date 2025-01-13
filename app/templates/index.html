@@ -1,46 +1,59 @@
 {% extends 'base.html' %}
 
-{% block title %}{% endblock %}
+{% block title %}SmiViewer{% endblock %}
 {% block header %}
 {% endblock %}
 
 {% block content %}
-<h1 class="welcome-header">Welcome to SmiViewer 🧪</h1>
-<form id="smiviewer_form" action="/chemical" method="post">
-    <div class="form-floating">
-        <input 
-            type="text" 
-            name="monomer" 
-            id="monomer_input" 
-            class="form-control"
-            placeholder="Enter your Monomer Name"
-            maxlength="30" 
-            required
-        />
-        <label for="monomer_input">Monomer Name</label><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col smiviewer_form">
+            <h1 class="welcome-header">Welcome to SmiViewer 🧪</h1>
+            <form action="/chemical" method="post">
+                <div class="form-floating">
+                    <input 
+                        type="text" 
+                        name="monomer" 
+                        id="monomer_input" 
+                        class="form-control"
+                        placeholder="Enter your Monomer Name"
+                        maxlength="30" 
+                        required
+                    />
+                    <label for="monomer_input">Monomer Name</label><br><br>
+                </div>
+
+                <div class="form-floating">
+                    <textarea
+                        type="text" 
+                        name="smiles" 
+                        id="smiles_input"
+                        class="form-control smiles-area"
+                        value=""
+                        style="height: 150px;"
+                        placeholder="Enter your long SMILES..."
+                        required></textarea>
+                    <label for="smiles_input">Enter your long SMILES...</label>
+                </div>
+                
+                <div class="flash alert alert-warning">⚠️ Invalid input. The SMILES or Monomer Name is incorrect.</div>
+
+
+                <button id="submit_btn" class="button">
+                    Submit
+                </button>
+            </form>
+        </div>
+        <div class="col molecule-properties">
+            <div class="mol-results">
+                <h1 class="mol-name"></h1>
+                <img src="" alt="Monomer Image" width="500" height="500" class="mol-image">
+                <p class="mt-5 mol-weight"></p>
+                <p class="mol-group"></p>
+            </div>
+        </div>
     </div>
-
-    <div class="form-floating">
-        <textarea
-            type="text" 
-            name="smiles" 
-            id="smiles_input"
-            class="form-control smiles-area"
-            value=""
-            style="height: 150px;"
-            placeholder="Enter your long SMILES..."
-            required></textarea>
-        <label for="smiles_input">Enter your long SMILES...</label>
-    </div>
-
-    {% for message in get_flashed_messages() %}
-        <div class="flash alert alert-warning">⚠️ {{ message }}</div>
-    {% endfor %}
-
-    <button class="button">
-        Submit
-    </button>
-</form>    
+</div>
 {% endblock %}
 
 {% block footer %}

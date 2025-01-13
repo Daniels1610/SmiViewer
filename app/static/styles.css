@@ -1,42 +1,32 @@
+/* HEADER - BODY - FOOTER Structure */
+
 body {
     min-width: 100vw;
     min-height: 100vh;
     margin: 0;
     background:aliceblue;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;  
 }
   
 header {
     min-height: 10rem;
     max-width: fit-content;
     margin: 0 auto;
-
 }
 
 footer {
-    min-height: 50px;
-}
-  
-body {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px; 
+    min-height: 3rem;
 }
 
 main {
     flex: 1;
+    width: 100%;
 } 
  
 p {
     font-family: 'Noto Sans';
-}
-
-a {
-    all: unset;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-family: "Noto Sans";
-    color: #FFF;
 }
 
 /* INPUT FIELDS */
@@ -49,16 +39,15 @@ input, textarea {
     background: #fafafa;
     padding: 1rem;
     border-radius: 3px;
-    width: 15rem;
+    width: 7rem;
     outline: none;
     resize: none;
 }
 
-input::placeholder, textarea::placeholder {
-    font-family: 'Noto Sans', 'Lucida Sans Regular';
-    font-size: 14px;
-} 
-
+form {
+    width: 100%;
+    max-width: 32rem; 
+}
 
 /* CUSTOM CLASSES */
 .button {
@@ -87,40 +76,37 @@ input::placeholder, textarea::placeholder {
 }
 
 .flash {
+    display: none;
+    color: black;
     margin-top: 3rem;
     font-size: medium;
 }
 
+/* Hide results initially */
+.mol-name, .mol-image, .mol-weight, .mol-group {
+    display: none;
+}
+
 .mol-name {
-    margin-top: 2.5rem;
-    font-family: 'Kantumruy Pro';
-    font-size: 6rem;
+    margin-bottom: 2rem;
 }
 
-
-.mol-weight {
-    margin-left: 7rem;
-    font-family: 'Noto Sans';
-    font-size: 1.5rem;
+.mol-image {
+    margin-left: 1rem
 }
 
-.mol-group {
-    margin-left: 8.2rem;
-    font-family: 'Noto Sans';
-    font-size: 1.5rem;
+.mol-group, .mol-weight {
+    font-size: 1.3rem;
 }
 
+.molecule-properties {
+    text-align: center;
+    position: relative;
+    margin-left: 10rem;
+    bottom: 5rem;
+}
 
 body {
-    justify-content: center;
     align-items: center;
-}
-
-.back-btn {
-    margin-top: 50px;
-    margin-left: 12rem;
-}
-
-.back-anchor {
-    padding: 1rem 4rem;
+    justify-content: center;
 }
