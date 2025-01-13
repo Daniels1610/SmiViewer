@@ -46,4 +46,21 @@ flask run
 ```
 <br>
 
-Now, you should be able to visit [SmiViewer](http://127.0.0.1:5000) on your localhost!
+Now, you should be able to visit [SmiViewer](http://127.0.0.1:5000) on your localhost! <br>
+
+### Quickstart
+Smiviewer works by entering:
+- Monomer Name: A name of your choice, that will make reference to your Monomer
+- SMILES: Chemical structure that follows SMILES [notation](https://chem-libretexts-org.translate.goog/Courses/Fordham_University/Chem1102%3A_Drug_Discovery_-_From_the_Laboratory_to_the_Clinic/05%3A_Organic_Molecules/5.08%3A_Line_Notation_(SMILES_and_InChI)?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wa).
+
+To get you started you can try any of the following SMILES:
+- CC(CC(=O)OCC(COC(=O)CC(C)S)(COC(=O)CC(C)S)COC(=O)CC(C)S)S
+- C=CCN1C(=O)N(C(=O)N(C1=O)CC=C)CC=C
+- CC(S)CC(=O)OCCN1C(=O)N(CCOC(=O)CC(C)S)C(=O)N(CCOC(=O)CC(C)S)C1=O
+- C=CC(=O)OCCCOCCCOCCCOC(=O)C=C
+- C=CC(=O)OC(=O)NCCCCCn1c(==O)n(CCCCCNC(O)OCCOC(=O)C-C)c(=O)n(CCCCCCNC(=OOCCOC(=O)C=C)c1 (This is one is Invalid 👀)
+
+![Smiviewer](app/static/smiviewer-formfilled.png?raw=true "Smiviewer with Form Filled")
+
+Then click on Submit to discover the fantastic structure and some properties of your Monomer!
+![Smiviewer](app/static/smiviewer-results.png?raw=true "Smiviewer Results Display")
