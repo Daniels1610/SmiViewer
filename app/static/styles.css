@@ -76,15 +76,10 @@ form {
 }
 
 .flash {
-    display: none;
     color: black;
     margin-top: 3rem;
     font-size: medium;
-}
-
-/* Hide results initially */
-.mol-name, .mol-image, .mol-weight, .mol-group {
-    display: none;
+    width: parent;
 }
 
 .mol-name {
@@ -92,18 +87,18 @@ form {
 }
 
 .mol-image {
-    margin-left: 1rem
+    margin-left: 1rem;
 }
 
 .mol-group, .mol-weight {
     font-size: 1.3rem;
 }
 
-.molecule-properties {
+.mol-results {
     text-align: center;
     position: relative;
     margin-left: 10rem;
-    bottom: 5rem;
+    bottom: 8rem;
 }
 
 body {
