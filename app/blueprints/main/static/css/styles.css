@@ -1,0 +1,112 @@
+/* HEADER - BODY - FOOTER Structure */
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    background:aliceblue;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;  
+}
+  
+header {
+    min-height: 10rem;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+footer {
+    min-height: 3rem;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+} 
+ 
+p {
+    font-family: 'Noto Sans';
+}
+
+/* INPUT FIELDS */
+input, textarea {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 3px;
+    width: 7rem;
+    outline: none;
+    resize: none;
+}
+
+form {
+    width: 100%;
+    max-width: 32rem; 
+}
+
+/* CUSTOM CLASSES */
+.button {
+    width: 100%;
+    height: 50px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    margin-top: 1rem;
+}
+
+.welcome-header {
+    padding: 2rem;
+}
+
+.submit-btn {
+    margin: 2rem 5rem;
+}
+
+.smiles-area {
+    width: parent;
+    height: 9.375rem;
+}
+
+.flash {
+    color: black;
+    margin-top: 3rem;
+    font-size: medium;
+    width: parent;
+}
+
+
+.mol-name {
+    margin-bottom: 2rem;
+}
+
+.mol-image {
+    margin-left: 1rem;
+    width: 31rem;
+    height: 31rem;
+}
+
+.mol-group, .mol-weight {
+    font-size: 1.3rem;
+}
+
+.mol-results {
+    text-align: center;
+    position: relative;
+    margin-left: 10rem;
+    bottom: 8rem;
+}
+
+
+body {
+    align-items: center;
+    justify-content: center;
+}

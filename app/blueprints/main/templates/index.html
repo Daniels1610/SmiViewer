@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}SmiViewer{% endblock %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col smiviewer_form">
+            <h1 class="welcome-header">Welcome to SmiViewer 🧪</h1>
+            <form action="/chemical" method="post">
+                <div id="monomer_field" class="form-floating">
+                    <input 
+                        type="text" 
+                        name="monomer" 
+                        id="monomer_input" 
+                        class="form-control"
+                        placeholder="Enter your Monomer Name"
+                        maxlength="30" 
+                        required
+                    />
+                    <label for="monomer_input">Monomer Name</label><br><br>
+                </div>
+
+                <div id="smiles_field" class="form-floating">
+                    <textarea
+                        type="text" 
+                        name="smiles" 
+                        id="smiles_input"
+                        class="form-control smiles-area"
+                        value=""
+                        placeholder="Enter your long SMILES..."
+                        required></textarea>
+                    <label for="smiles_input">Enter your long SMILES...</label>
+                </div>
+                
+                <button id="submit_btn" class="button">
+                    Submit
+                </button>
+            </form>
+        </div>
+        <div class="col mol-results">
+            <h1 class="mol-name"></h1>
+            <p class="mt-5 mol-weight"></p>
+            <p class="mol-group"></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div>
+    <i><p>Made by Daniel Agraz Vallejo 🚀 - 2025</p></i>
+</div>
+{% endblock %}

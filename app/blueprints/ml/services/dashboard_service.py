@@ -2,8 +2,9 @@ from collections import defaultdict
 import re, datetime
 import json
 
-from dashboard_data import (all_models_raw, monomers_raw, pp_raw, units_raw)
-from cleaners import (_clean_model_steps, _clean_stringified_dict)
+from app.blueprints.ml.services.dashboard_data import all_models_raw
+from app.blueprints.ml.helpers.cleaners import (_clean_model_steps, _clean_stringified_dict)
+from app.blueprints.ml.helpers.model_dicts import (monomers_dict, properties_dict, units_dict)
 
 def get_dashboard_data() -> defaultdict: 
     '''
@@ -115,24 +116,8 @@ def get_dashboard_data() -> defaultdict:
         status_data['rmse_std'] = round(rmse_std, 4)
         
         
-    # Unit UUID to name
-    
-    units_dict = {str(unit['uuid']) : unit['symbol'] for unit in units_raw}
-        
-    # Property UUID to name
-    
-    properties_dict = {}
-    for item in pp_raw:
-        properties_dict[str(item['uuid'])] = {
-            'name': item['name'],
-            'short_name': item['short_name']
-        }
-        
-    # Monomer UUID to name
-
-    monomers_dict = {str(monomer_uuid) : name for name,monomer_uuid in monomers_raw}
-    
     for model_details in all_models.values():
+
         # Units
         model_details['units'] = units_dict[ str(model_details['units']) ] # replace the uuid with the symbol
 
@@ -155,9 +140,3 @@ def get_dashboard_data() -> defaultdict:
         model_details['monomer_counts'] = model_monomer_counts
         
     return all_models
-    
-
-
-if (__name__ == '__main__'):
-    amodels = get_dashboard_data()
-    print(f'ALL MODELS: {amodels}')
