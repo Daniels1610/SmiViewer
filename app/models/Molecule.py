@@ -29,12 +29,12 @@ class Molecule():
         self.group = Group.OTHER
 
         # Identifies Thiol Groups (-SH)
-        if (fr_SH(self.mol) > 0):
+        if (fr_SH(self.mol)):
             self.group = Group.THIOL
 
         # Identifies Alkenes Groups (C=C)
         p = FragmentMatcher(); p.Init('C=C')
-        if (len(p.GetMatches(self.mol)) > 0):
+        if (p.GetMatches(self.mol)):
             self.group = Group.ALKENE
 
     # SMILE VALIDATION
