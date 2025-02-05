@@ -17,7 +17,7 @@ def index():
         data = request.get_json()
         mol = Molecule(data['smiles'], data['monomer'])
 
-        if (mol.isValid() and len(data['monomer']) > 0):
+        if (mol.isValid() and data.get('monomer')):
             image_io = BytesIO()
             mol.diagram.save(image_io, 'png')
             mol.set_diagram('data:image/png;base64,' + b64encode(image_io.getvalue()).decode('ascii'))
