@@ -88,6 +88,8 @@ form {
 
 .mol-image {
     margin-left: 1rem;
+    width: 31rem;
+    height: 31rem;
 }
 
 .mol-group, .mol-weight {

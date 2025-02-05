@@ -11,6 +11,8 @@ badRequestDiv.appendChild(badRequestSpan);
 
 // MoleculeResults elements
 const molResults = document.querySelector(".mol-results");
+const molName = document.querySelector(".mol-name");
+const molImage = document.createElement("img");
 
 
 /** INPUT FORM RESTRICTIONS */
@@ -65,20 +67,21 @@ async function chemicalPOST () {
         const data = await response.json();
 
         // Set Molecule properties
-        let molInfo = [data.name, 
-            data.diagram, 
+        let molInfo = [data.name,  
             `<b>Molecule Weight:</b> ${data.weight}`, 
             `<b>Molecule Group:</b> ${data.group}`];
 
         let molResultsChildren = molResults.children;
-        for (i = 0; i < molResultsChildren.length; i++) {
-            if (molResultsChildren[i].className === "mol-image") {
-                molResultsChildren[i].src = molInfo[i];
-            } else {
+        for (i = 0; i < molResultsChildren.length-1; i++) {
                 molResultsChildren[i].innerHTML = molInfo[i];
             }
-        }
+        
+        // Set Image attributes
+        molImage.src = data.diagram;
+        molImage.classList.add("mol-image")
+        molName.after(molImage);
     }
+        
     catch(error) {
         console.error(error);
     }
